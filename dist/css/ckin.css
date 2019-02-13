@@ -1,3 +1,7 @@
+:root {
+  --main-color: pink;
+  --secondary-color: blue;
+}
 /*!
    ckin v0.0.1: Custom HTML5 Video Player Skins.
    (c) 2017 
@@ -11,6 +15,7 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Comfortaa:300,400,700");
 
 [class^="ckin-"], [class*=" ckin-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -153,7 +158,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color:var(--main-color);
   outline: 0;
   padding: 0;
   cursor: pointer;
@@ -162,6 +167,7 @@ video {
   display: -ms-flexbox;
   display: flex;
   max-width: 50px;
+  font-size: 40px;
 }
 
 .default__button i {
@@ -174,7 +180,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color: var(--main-color);
   text-align: center;
   outline: 0;
   padding: 0;
@@ -259,7 +265,7 @@ video {
 
 .default .progress__filled {
   width: 0%;
-  background: #00CF7D;
+  background: var(--main-color);
   -ms-flex: 0;
       flex: 0;
   -ms-flex-preferred-size: 0%;
@@ -304,7 +310,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color: var(--main-color);
   outline: 0;
   padding: 0;
   cursor: pointer;
@@ -325,7 +331,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color: var(--main-color);
   text-align: center;
   outline: 0;
   padding: 0;
@@ -410,7 +416,7 @@ video {
 
 .minimal .progress__filled {
   width: 0%;
-  background: #00CF7D;
+  background: var(--main-color);
   -ms-flex: 0;
       flex: 0;
   -ms-flex-preferred-size: 0%;
@@ -454,7 +460,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color: var(--main-color);
   outline: 0;
   padding: 0;
   cursor: pointer;
@@ -475,7 +481,7 @@ video {
   background: none;
   border: 0;
   line-height: 1;
-  color: #00CF7D;
+  color: var(--main-color);
   text-align: center;
   outline: 0;
   padding: 0;
@@ -561,7 +567,7 @@ video {
 
 .compact .progress__filled {
   width: 0%;
-  background: #00CF7D;
+  background: var(--main-color);
   -ms-flex: 0;
       flex: 0;
   -ms-flex-preferred-size: 0%;

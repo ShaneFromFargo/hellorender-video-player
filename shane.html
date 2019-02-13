@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="dist/css/ckin.css" />
+    <link rel="stylesheet" href="dist/css/cta-button.css" />
+    <style>
+      .video-container {
+        width: 650px;
+        max-height: 800px;
+      }
+      .after-video {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 5px;
+        padding: 20px;
+        display: none;
+        text-align: center;
+        font-family: "Comfortaa", sans-serif;
+      }
+      .replay-btn
+      {
+        margin-top: 45px;
+      }
+      /*Display Vertical Video, Not sure how we are going to trigger this?*/
+      @media only screen and (max-width: 600px) {
+        .ckin__player{
+            width: 350px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Video Player Demo</h1>
+    <div class="video-container">
+        <!--Horizantal Video-->
+    <video data-title="Hello Render Title" data-color="#fff000" src="https://s3-us-west-2.amazonaws.com/hello-render-output/bob.mp4"></video>
+       <!--Vertical Video-->
+       <!--Broswer must be less than 600 pixels to look right-->
+       <!-- <video data-color="#4286f4" src="https://s3-us-west-2.amazonaws.com/hello-render-output/good-morningf2a85e3b-9b93-402f-97b9-58126c3fec62.mp4"></video> -->
+      <div id="cta-video-form" class="after-video">
+        <h1 style="margin-top: 15%">
+          One more step, fill out the questionnaire
+        </h1>
+        <a
+          class="cta-btn"
+          href="https://thematchartist.typeform.com/to/tYMofQ?first_name=Jeff&last_name=Schmidt&email=jeffreyschmidt@outlook.com"
+          >Start!</a
+        >
+        <br/>
+        <a class="btn btn-round replay-btn" id="replay-btn">Replay Video</a>
+      </div>
+    </div>
+    <script src="dist/js/ckin.js"></script>
+    <script src="dist/js/video-cta.js"></script>
+  </body>
+</html>

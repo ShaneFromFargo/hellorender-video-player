@@ -174,6 +174,7 @@ players.forEach(function (player) {
     var ranges = player.querySelectorAll('.' + skin + '__slider');
     var volumeButton = player.querySelector('.volume');
     var fullScreenButton = player.querySelector('.fullscreen');
+    var replayButton = document.querySelector('.replay-btn');
 
     if (obj.browserName === "IE" && (obj.browserVersion === 8 || obj.browserVersion === 9)) {
         showControls(video);
@@ -193,6 +194,17 @@ players.forEach(function (player) {
     video.addEventListener('timeupdate', function () {
         handleProgress(this, progressBar);
     });
+
+    //shane
+    video.addEventListener('ended', function(){
+        closeFullScreen(player, fullScreenButton);
+        triggerCTA();
+    });
+    replayButton.addEventListener('click',function()
+    {
+        video.currentTime = 0;
+        removeCTA();
+    })
 
     toggle.forEach(function (button) {
         return button.addEventListener('click', function () {
@@ -361,6 +373,28 @@ function toggleFullScreen(player, fullScreenButton) {
         isFullscreen = true;
 
         fullScreenButton.innerHTML = iconCompress;
+    } else {
+        player.classList.remove('ckin__fullscreen');
+
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        isFullscreen = false;
+        fullScreenButton.innerHTML = iconExpand;
+    }
+}
+
+function closeFullScreen(player, fullScreenButton) {
+    // let isFullscreen = false;
+    if (!document.fullscreenElement && // alternative standard method
+    !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    //Player is not fullscreen
     } else {
         player.classList.remove('ckin__fullscreen');
 
