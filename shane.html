@@ -1,5 +1,6 @@
 <html>
   <head>
+    
     <link rel="stylesheet" href="dist/css/ckin.css" />
     <link rel="stylesheet" href="dist/css/cta-button.css" />
     <style>
@@ -20,7 +21,7 @@
       {
         margin-top: 45px;
       }
-      /*Display Vertical Video, Not sure how we are going to trigger this?*/
+      /*Jeff - Display Vertical Video, Not sure how we are going to trigger this?*/
       @media only screen and (max-width: 600px) {
         .ckin__player{
             width: 350px;
@@ -31,12 +32,16 @@
   <body>
     <h1>Video Player Demo</h1>
     <div class="video-container">
+      <!--Jeff there should be some way that we can auto switch between the horizantal and vertical video if we detect we are on mobile. -->
         <!--Horizantal Video-->
-    <video data-title="Hello Render Title" data-color="#fff000" src="https://s3-us-west-2.amazonaws.com/hello-render-output/bob.mp4"></video>
+    <!--<video data-title="Hello Render Title" data-color="#fff000" src="https://s3-us-west-2.amazonaws.com/hello-render-output/bob.mp4"></video>-->
        <!--Vertical Video-->
        <!--Broswer must be less than 600 pixels to look right-->
-       <!-- <video data-color="#4286f4" src="https://s3-us-west-2.amazonaws.com/hello-render-output/good-morningf2a85e3b-9b93-402f-97b9-58126c3fec62.mp4"></video> -->
+       <!--Jeff the dataColor attribute, the source of the video, and the title attribute should all come from our API-->
+       <video data-color="#4286f4" src="https://s3-us-west-2.amazonaws.com/hello-render-output/good-morningf2a85e3b-9b93-402f-97b9-58126c3fec62.mp4"></video>
       <div id="cta-video-form" class="after-video">
+        <!--Jeff - This is where our integrations will really shine. In the future we can have mailchimp integrations, drip, aweber, or custom forms-->
+        <!--However for now let's just go with the three options. Call to action text, which is the h1 below, the href link and the href text -->
         <h1 style="margin-top: 15%">
           One more step, fill out the questionnaire
         </h1>
@@ -49,7 +54,9 @@
         <a class="btn btn-round replay-btn" id="replay-btn">Replay Video</a>
       </div>
     </div>
+    <!--ckin js was developed by a guy overseas, however I did modify the ckin.js to fit our needs-->
     <script src="dist/js/ckin.js"></script>
+  <!--This script was written by me-->
     <script src="dist/js/video-cta.js"></script>
   </body>
 </html>
